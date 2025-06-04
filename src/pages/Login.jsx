@@ -5,7 +5,7 @@ import { login } from "../utils/auth";
 import toast, { Toaster } from "react-hot-toast";
 
 function Login() {
-  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [loginData, setLoginData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,7 +22,7 @@ function Login() {
   };
 
   return (<>
-    <Container maxWidth="xs" sx={{position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)'}}>
+    <Container maxWidth="xs" sx={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}>
       <Paper elevation={4} sx={{ padding: 4, mt: 10 }}>
         <Typography variant="h5" mb={3} align="center">
           Login
@@ -30,7 +30,7 @@ function Login() {
         <Box>
           <TextField
             label="Username"
-            name="email"
+            name="username"
             // type="email"
             value={loginData.email}
             onChange={handleChange}

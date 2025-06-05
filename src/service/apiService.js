@@ -4,7 +4,7 @@ import { refreshToken } from '../utils/auth';
 
 
 const ApiClient = axios.create({
-    baseURL: "http://0.0.0.0:8000/",  // API_BASE_URL,
+    baseURL: API_BASE_URL,
     timeout: 60000,
     headers: {
         'Content-Type': 'application/json'

@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import toast, { Toaster } from "react-hot-toast";
 import { getCreatedForm, registerEmployee } from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 
 const RegisterEmployee = () => {
@@ -53,6 +54,14 @@ const RegisterEmployee = () => {
     }, []) ;
   
     if (loading) return <CircularProgress />;
+
+    if(!form.id){
+        return <Container>
+            <Typography sx={{mt:10, textAlign: 'center'}}>
+                Please create a form <Link to='/form-builder'>here</Link>
+            </Typography>
+        </Container>
+    }
   
     return (
         <Container sx={{mt:5}}>

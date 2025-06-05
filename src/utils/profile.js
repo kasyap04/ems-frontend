@@ -13,3 +13,17 @@ export const getProfileData = async () => {
         return false ;
     }
 } ;
+
+
+
+export const getAllEmployee = async (formId) => {
+    try{
+        const result = await ApiService.get({
+            path: `form/records/${formId}`
+        }) ;
+        return result ;
+    } catch(e){
+        console.log(e);
+        return [] ;
+    }
+} ; 

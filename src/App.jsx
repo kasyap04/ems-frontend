@@ -6,6 +6,7 @@ import MainLayout from "./layout/MainLayout";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import FormBuilder from "./pages/FormBuilder";
+import RegisterEmployee from "./pages/RegisterEmployee";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register-employee" element={<RegisterEmployee />} />
       </Routes>
 
       <Routes>  

@@ -85,10 +85,41 @@ export const getCreatedForm = async () => {
             path: 'form/forms/all/',
             data: {title: "cust_form"}
         }) ;
-        console.log(result);
-        
         return result
     }catch(e){
+        console.log(e);
+        return false ;
+    }
+} ;
+
+
+
+export const registerEmployee = async (payload) => {
+    try{
+        const result = await ApiService.post({
+            path: "form/records/",
+            data: payload
+        }) ;
+
+        console.log(result);
+        return true ;
+    } catch(e){
+        console.log(e);
+        return false ;
+    }
+} ;
+
+
+
+export const deleteEmployee = async (empId) => {
+    try{
+        const result = await ApiService.delete({
+            path: `form/records/delete/${empId}/`
+        }) ;
+
+        console.log('delete = ',  result);
+        return true ;
+    } catch(e){
         console.log(e);
         return false ;
     }
